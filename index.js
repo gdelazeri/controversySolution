@@ -4,7 +4,7 @@ const bodyParser = require("body-parser");
 
 // Instances.
 const app = express();
-const port = process.env.PORT_API_SERVER || 5000;
+const port = process.env.PORT || 5000;
 
 // Configuration.
 app.use(bodyParser.urlencoded({ extended: true }));
