@@ -1,0 +1,79 @@
+1) para buscar todos os usuários
+Rota: GET /users
+retorno: 
+{
+    "success": true,
+    "data": [
+        {
+            "usuario": "PrefeitoPOA",
+            "senha": "prefeito1",
+            "tipo": "1"
+        },
+        {
+            "usuario": "PrefeitoCanoas",
+            "senha": "prefeito2",
+            "tipo": "1"
+        },
+    ]
+}
+
+2) para adicionar uma controversia
+Rota: POST /addControversy
+body: {
+	"motivo": "Sistema lento",
+	"descrição": "O sistema está muito lento",
+	"status": "AGUARDANDO",
+	"cnpj_mediador": "123456789",
+	"tipo": "0",
+	"resposta": "",
+	"reclamante": "PrefeitoPOA",
+	"codigo_UBS": 1,
+	"categoria_nivel_1": "1",
+	"categoria_nivel_2": "2"
+}
+
+3) para buscar controversias
+Rota: GET /getControversy
+retorno: {
+    "success": true,
+    "data": [
+        {
+            "id": 12,
+            "motivo": "Sistema lento",
+            "status": "AGUARDANDO",
+            "cnpj_mediador": "123456789",
+            "tipo": "0",
+            "resposta": "",
+            "reclamante": "PrefeitoPOA",
+            "codigo_ubs": 1,
+            "data": "2018-07-14T03:00:00.000Z",
+            "hora": "13:23:48",
+            "categoria_nivel_1": "1",
+            "categoria_nivel_2": "2",
+            "descricao": "O sistema está muito lento"
+        }
+    ]
+}
+
+4) para adicionar iteração
+Rota: POST /addIteration
+body: {
+	"id_controversia": 12,  // ID da controversia cadastrada
+	"resposta": "Teste de resposta",
+	"usuario": "PrefeitoPOA"
+}
+
+5) para buscar iterações de uma controversia
+Rota: GET /getControversy/{id_controversia}
+retorno: {
+    "success": true,
+    "data": [
+        {
+            "id": 13,
+            "id_controversia": 12,
+            "data": "2018-07-14T03:00:00.000Z",
+            "resposta": "Teste de resposta",
+            "usuario": "PrefeitoPOA"
+        }
+    ]
+}
