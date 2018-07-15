@@ -22,17 +22,20 @@ app.listen(port, () => console.log(`Listening on port ${port}`));
 
 const MainController = require('./Controllers/mainController');
 
-// Retrieves the user data.
+// Get API status
+app.get('/', MainController.online);
+
+// Get all users
 app.get('/users', MainController.getUsers);
 
-// Insert controversia.
+// Insert controversy.
 app.post('/addControversy', MainController.addControversy);
 
-// get controversias.
+// Get all controversies.
 app.get('/getControversy', MainController.getControversies);
 
-// Insert iteração.
+// Insert iteration.
 app.post('/addIteration', MainController.addIteration);
 
-// get iterações de uma controversia.
+// Get controversy iterations
 app.get('/getIterations/:id_controversia', MainController.getIterations);

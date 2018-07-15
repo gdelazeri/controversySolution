@@ -1,7 +1,7 @@
 const database = require('../Util/database');
 const moment = require('moment-timezone');
 
-class ControversiasDAO {
+class ControversyDAO {
     
     /**
      * Get all users.
@@ -66,4 +66,4 @@ class ControversiasDAO {
     }
 }
 
-module.exports = ControversiasDAO;
+module.exports = ControversyDAO;
