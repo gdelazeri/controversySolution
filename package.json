@@ -1,8 +1,8 @@
 {
   "name": "lecucas-server",
   "version": "1.0.0",
+  "main": "index.js",
   "scripts": {
-    "client": "cd client && npm start",
     "start": "node index.js",
     "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
   },
