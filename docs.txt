@@ -1,4 +1,4 @@
-1) para buscar todos os usuários
+1) Para buscar todos os usuários
 Rota: GET /users
 retorno: 
 {
@@ -17,7 +17,7 @@ retorno:
     ]
 }
 
-2) para adicionar uma controversia
+2) Para adicionar uma controversia
 Rota: POST /addControversy
 body: {
 	"motivo": "Sistema lento",
@@ -32,7 +32,7 @@ body: {
 	"categoria_nivel_2": "2"
 }
 
-3) para buscar controversias
+3) Para buscar controversias
 Rota: GET /getControversy
 retorno: {
     "success": true,
@@ -55,7 +55,7 @@ retorno: {
     ]
 }
 
-4) para adicionar iteração
+4) Para adicionar iteração
 Rota: POST /addIteration
 body: {
 	"id_controversia": 12,  // ID da controversia cadastrada
@@ -63,8 +63,8 @@ body: {
 	"usuario": "PrefeitoPOA"
 }
 
-5) para buscar iterações de uma controversia
-Rota: GET /getControversy/{id_controversia}
+5) Para buscar iterações de uma controversia
+Rota: GET /getIterations/{id_controversia}
 retorno: {
     "success": true,
     "data": [
@@ -76,4 +76,27 @@ retorno: {
             "usuario": "PrefeitoPOA"
         }
     ]
+}
+
+6) Para realizar um login
+Rota: POST /login
+body: {
+	"usuario": "ProfessorINF",
+	"senha": "professor1"
+}
+
+retorno (login realizado):
+{
+    "success": true,
+    "data": {
+        "usuario": "ProfessorINF",
+        "senha": "professor1",
+        "tipo": "2",
+        "nome": "Cirano"
+    }
+}
+
+retorno (login negado):
+{
+    "success": false
 }

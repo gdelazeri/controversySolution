@@ -34,6 +34,17 @@ class MainController {
         const data = await ControversyDAO.getIterations(req.params.id_controversia);
         res.send({ success, data });
     }
+
+    static async login(req, res) {
+        let success = false;
+        const data = await ControversyDAO.login(req.body.usuario, req.body.senha);
+        if (data) {
+            success = true;
+            res.send({ success, data });
+        } else {
+            res.send({ success });
+        }
+    }
  }
 
 module.exports = MainController;

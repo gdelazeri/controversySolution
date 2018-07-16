@@ -39,3 +39,6 @@ app.post('/addIteration', MainController.addIteration);
 
 // Get controversy iterations
 app.get('/getIterations/:id_controversia', MainController.getIterations);
+
+// Login.
+app.post('/login', MainController.login);

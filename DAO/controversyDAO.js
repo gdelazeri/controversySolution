@@ -64,6 +64,16 @@ class ControversyDAO {
         const sql = `SELECT * FROM iteracao WHERE id_controversia = ${id_controversia};`;
         return database.Query(sql);
     }
+
+    static async login(usuario, senha) {
+        const sql = `SELECT * FROM usuario WHERE usuario = '${usuario}' AND senha = '${senha}';`;
+        const user = await database.Query(sql);
+        if (user.length === 0) {
+            return undefined;
+        } else {
+            return user[0];
+        }
+    }
 }
 
 module.exports = ControversyDAO;
