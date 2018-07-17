@@ -40,5 +40,8 @@ app.post('/addIteration', MainController.addIteration);
 // Get controversy iterations
 app.get('/getIterations/:id_controversia', MainController.getIterations);
 
+// Get controversy iterations
+app.get('/deleteIteration/:id_iteration', MainController.deleteIteration);
+
 // Login.
 app.post('/login', MainController.login);

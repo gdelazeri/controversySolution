@@ -35,6 +35,15 @@ class MainController {
         res.send({ success, data });
     }
 
+    static async deleteIteration(req, res) {
+        let success = false;
+        const data = await ControversyDAO.deleteIteration(req.params.id_iteration);
+        if (data) {
+            success = true;
+        }
+        res.send({ success });
+    }
+
     static async login(req, res) {
         let success = false;
         const data = await ControversyDAO.login(req.body.usuario, req.body.senha);

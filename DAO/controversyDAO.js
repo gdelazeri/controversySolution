@@ -65,6 +65,19 @@ class ControversyDAO {
         return database.Query(sql);
     }
 
+    static async deleteIteration(id_iteration) {
+        const sql = `DELETE FROM iteracao WHERE id = ${id_iteration};`;
+        try {
+            await database.Query(sql);
+            const sqlPub = `DELETE FROM publicacao WHERE id = ${id_iteration};`;
+            await database.Query(sqlPub);
+            return true;
+        } catch (error) {
+            console.log(error);
+            return false;
+        }
+    }
+
     static async login(usuario, senha) {
         const sql = `SELECT * FROM usuario WHERE usuario = '${usuario}' AND senha = '${senha}';`;
         const user = await database.Query(sql);
