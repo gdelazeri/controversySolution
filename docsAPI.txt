@@ -100,3 +100,12 @@ retorno (login negado):
 {
     "success": false
 }
+
+7) Para excluir uma iteração
+Rota: GET /deleteIteration/{id_iteracao}
+retorno (excluido) : {
+    "success": true,
+}
+retorno (não foi excluido/erro) : {
+    "success": false,
+}
