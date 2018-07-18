@@ -38,6 +38,7 @@ class MainController {
     static async deleteIteration(req, res) {
         let success = false;
         const data = await ControversyDAO.deleteIteration(req.params.id_iteration);
+        console.log(data);
         if (data) {
             success = true;
         }
